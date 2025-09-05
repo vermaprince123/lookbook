@@ -1,3 +1,15 @@
+/**
+ * LookVideo component for rendering a video look with play/pause and mute/unmute controls.
+ * Automatically plays the video when active and pauses when inactive.
+ * Calls onNext when the video ends.
+ *
+ * @param {Object} props
+ * @param {Object} props.look - The look object containing src for the video.
+ * @param {Function} props.onNext - Callback to advance to the next look when video ends.
+ * @param {boolean} props.isActive - Whether this look is currently active.
+ * @returns {JSX.Element}
+ */
+
 import React, { useRef, useEffect, useState } from "react";
 
 function LookVideo({ look, onNext, isActive }) {

@@ -1,5 +1,15 @@
+/**
+ * Annotation component for rendering a clickable annotation dot on a look.
+ *
+ * @param {Object} props
+ * @param {number} props.x - The x position (percentage) of the annotation.
+ * @param {number} props.y - The y position (percentage) of the annotation.
+ * @param {Object} props.product - The product object associated with the annotation.
+ * @param {Function} [props.onClick] - Callback for annotation/product click.
+ * @returns {JSX.Element}
+ */
+
 import React from "react";
-import ProductCard from "./ProductCard";
 import "./annotation.css";
 
 function Annotation({ x, y, product, onClick }) {

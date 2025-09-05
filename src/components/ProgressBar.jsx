@@ -1,3 +1,15 @@
+/**
+ * ProgressBar component for displaying a timed progress bar.
+ * - Fills over the specified duration.
+ * - Calls onComplete when finished.
+ * - Optionally scrolls into view when complete.
+ *
+ * @param {Object} props
+ * @param {number} props.duration - Duration in milliseconds for the progress bar to fill.
+ * @param {Function} props.onComplete - Callback when progress reaches 100%.
+ * @returns {JSX.Element}
+ */
+
 import React, { useEffect, useState, useRef } from "react";
 
 function ProgressBar({ duration, onComplete }) {
