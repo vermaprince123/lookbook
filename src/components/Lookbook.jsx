@@ -4,7 +4,11 @@ import Look from "./Look";
 import look1 from "../assets/images/look1.jpg";
 import look2 from "../assets/images/look2.jpg";
 import look3 from "../assets/images/look3.jpg";
+import look5 from "../assets/images/look5.jpg";
+import look6 from "../assets/images/look6.jpg";
+import look7 from "../assets/images/look7.jpg";
 import look1Video from "../assets/videos/look1.mp4";
+
 
 const looksData = [
   {
@@ -31,6 +35,29 @@ const looksData = [
     src: look1Video,
     annotations: [],
   },
+  {
+    id: 5,
+    type: "image",
+    src: look5,
+    annotations: [{ x: 50, y: 30, product: { id: 101, name: "Shirt" } }],
+  },
+  {
+    id: 6,
+    type: "image",
+    src: look6,
+    annotations: [{ x: 50, y: 30, product: { id: 101, name: "Shirt" } }],
+  },
+  {
+    id: 7,
+    type: "image",
+    src: look7,
+     annotations: [{ x: 50, y: 30, product: { id: 101, name: "Shirt" } }],
+  },
+];
+
+const groups = [
+  [looksData[0], looksData[1], looksData[2], looksData[3]],
+  [looksData[5], looksData[6], looksData[4]],
 ];
 
 function Lookbook() {
@@ -39,7 +66,7 @@ function Lookbook() {
   const slidesRef = useRef(null);
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % looksData.length);
+    setCurrentIndex((prev) => (prev + 1) % groups.length);
   };
 
   // Auto-scroll to current slide when index changes
@@ -66,21 +93,43 @@ function Lookbook() {
       }}
       ref={slidesRef}
     >
-      {looksData.map((look, idx) => (
+      {groups.map((group, idx) => (
         <div
           className="slide"
-          key={look.id}
+          key={idx}
           style={{
             height: "100vh",
             scrollSnapAlign: "start",
           }}
         >
-          <Look
-            look={look}
-            onNext={handleNext}
-            isActive={idx === currentIndex}
-            onProductClick={handleProductClick}
-          />
+          <div
+            className="horizontal-slider"
+            style={{
+              overflowX: "scroll",
+              scrollSnapType: "x mandatory",
+              display: "flex",
+              height: "100%",
+            }}
+          >
+            {group.map((look, lookIdx) => (
+              <div
+                key={look.id}
+                style={{
+                  width: "100vw",
+                  flexShrink: 0,
+                  scrollSnapAlign: "start",
+                  height: "100%",
+                }}
+              >
+                <Look
+                  look={look}
+                  onNext={handleNext}
+                  isActive={idx === currentIndex}
+                  onProductClick={handleProductClick}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       ))}
     </div>
