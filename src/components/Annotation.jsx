@@ -9,7 +9,6 @@
  * @returns {JSX.Element}
  */
 
-import React from "react";
 import "./annotation.css";
 
 function Annotation({ x, y, product, onClick }) {

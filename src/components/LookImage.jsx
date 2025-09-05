@@ -9,7 +9,6 @@
  * @returns {JSX.Element}
  */
 
-import React from "react";
 import Annotation from "./Annotation";
 import ProgressBar from "./ProgressBar";
 

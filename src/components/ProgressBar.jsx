@@ -10,7 +10,7 @@
  * @returns {JSX.Element}
  */
 
-import React, { useEffect, useState, useRef } from "react";
+import  { useEffect, useState, useRef } from "react";
 
 function ProgressBar({ duration, onComplete }) {
   const [progress, setProgress] = useState(0);

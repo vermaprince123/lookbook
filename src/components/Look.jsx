@@ -10,7 +10,6 @@
  * @returns {JSX.Element|null}
  */
 
-import React from "react";
 import LookImage from "./LookImage";
 import LookVideo from "./LookVideo";
 

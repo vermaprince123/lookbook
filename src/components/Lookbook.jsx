@@ -7,44 +7,17 @@
  * - Uses React Router for navigation.
  */
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Look from "./Look";
-import look1 from "../assets/images/look1.jpg";
-import look2 from "../assets/images/look2.jpg";
-import look3 from "../assets/images/look3.jpg";
-import look1Video from "../assets/videos/look1.mp4";
+
+import { MOCK_PRODUCTS } from "../mock/products";
 
 /**
  * Array of look objects containing image/video sources and product annotations.
  * @type {Array<{id: number, type: string, src: string, annotations: Array}>}
  */
-const looksData = [
-  {
-    id: 1,
-    type: "image",
-    src: look1,
-    annotations: [{ x: 50, y: 30, product: { id: 101, name: "Shirt" } }],
-  },
-  {
-    id: 2,
-    type: "image",
-    src: look2,
-    annotations: [{ x: 50, y: 30, product: { id: 101, name: "Shirt" } }],
-  },
-  {
-    id: 3,
-    type: "image",
-    src: look3,
-    annotations: [{ x: 50, y: 30, product: { id: 101, name: "Shirt" } }],
-  },
-  {
-    id: 4,
-    type: "video",
-    src: look1Video,
-    annotations: [],
-  },
-];
+
 
 function Lookbook() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -55,11 +28,11 @@ function Lookbook() {
    * Advances to the next look in the list.
    */
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % looksData.length);
+    setCurrentIndex((prev) => (prev + 1) % MOCK_PRODUCTS.length);
   };
 
   // Auto-scroll to current slide when index changes
-  React.useEffect(() => {
+  useEffect(() => {
     if (slidesRef.current) {
       const slide = slidesRef.current.children[currentIndex];
       if (slide) {
@@ -86,7 +59,7 @@ function Lookbook() {
       }}
       ref={slidesRef}
     >
-      {looksData.map((look, idx) => (
+      {MOCK_PRODUCTS.map((look, idx) => (
         <div
           className="slide"
           key={look.id}

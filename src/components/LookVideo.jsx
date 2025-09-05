@@ -10,7 +10,7 @@
  * @returns {JSX.Element}
  */
 
-import React, { useRef, useEffect, useState } from "react";
+import  { useRef, useEffect, useState } from "react";
 
 function LookVideo({ look, onNext, isActive }) {
   const videoRef = useRef(null);
