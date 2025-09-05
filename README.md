@@ -9,6 +9,11 @@ This project is a React-based Lookbook application built with Vite. It displays 
 - **Annotations:** Each look can display product annotations.
 - **No Scroll:** The app uses CSS animations for transitions instead of scrolling.
 
+## Live Demo
+
+Access the deployed app here:  
+[https://68baadf3d77e3515ce3cc686--lookbookfashion.netlify.app/](https://68baadf3d77e3515ce3cc686--lookbookfashion.netlify.app/)
+
 ## How to Build
 
 1. Install dependencies:
@@ -41,4 +46,4 @@ This project is a React-based Lookbook application built with Vite. It displays 
 ## Customization
 
 - Add new images/videos to the `assets` folder and update `looksData` in `src/components/Lookbook.jsx`.
-- Adjust animation timing in the CSS as needed.
+- Adjust animation timing in the CSS
