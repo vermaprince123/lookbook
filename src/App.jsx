@@ -1,4 +1,11 @@
-import React from "react";
+/**
+ * App component for the Lookbook React application.
+ * Sets up routing using React Router.
+ * - "/" renders the Lookbook component.
+ * - "/product/:productId" renders the ProductDetail component.
+ * Includes global styles and a header.
+ */
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Lookbook from "./components/Lookbook";
 import ProductDetail from "./components/ProductDetail";

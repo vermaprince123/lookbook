@@ -1,3 +1,12 @@
+/**
+ * Lookbook component for displaying a series of looks (images/videos) with annotations.
+ * - Renders each look as a full-screen slide.
+ * - Supports auto-scroll to the active slide.
+ * - Allows manual scroll by user.
+ * - Handles navigation to product detail pages via annotation clicks.
+ * - Uses React Router for navigation.
+ */
+
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Look from "./Look";
@@ -65,6 +74,9 @@ function Lookbook() {
   const navigate = useNavigate();
   const slidesRef = useRef(null);
 
+  /**
+   * Advances to the next look in the list.
+   */
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % groups.length);
   };
@@ -79,6 +91,10 @@ function Lookbook() {
     }
   }, [currentIndex]);
 
+  /**
+   * Navigates to the product detail page for the given product ID.
+   * @param {number} productId
+   */
   const handleProductClick = (productId) => {
     navigate(`/product/${productId}`);
   };

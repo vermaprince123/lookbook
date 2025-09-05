@@ -1,3 +1,14 @@
+/**
+ * LookImage component for rendering an image look with annotations and a progress bar.
+ *
+ * @param {Object} props
+ * @param {Object} props.look - The look object containing src and annotations.
+ * @param {Function} props.onNext - Callback to advance to the next look.
+ * @param {boolean} props.isActive - Whether this look is currently active.
+ * @param {Function} props.onProductClick - Callback for annotation/product click.
+ * @returns {JSX.Element}
+ */
+
 import React from "react";
 import Annotation from "./Annotation";
 import ProgressBar from "./ProgressBar";
