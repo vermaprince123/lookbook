@@ -1,12 +1,44 @@
-# React + Vite
+# Lookbook React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React-based Lookbook application built with Vite. It displays a series of images and videos, allowing users to navigate through them with smooth slide-in/slide-out transitions. Each look can have product annotations, and the app supports automatic progression using a progress bar.
 
-Currently, two official plugins are available:
+## Solution Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Image/Video Slides:** Only the current look is rendered, with slide-in/out animations for transitions.
+- **Navigation:** Users can move to the next or previous look using navigation buttons. Automatic navigation is triggered after the progress bar completes.
+- **Annotations:** Each look can display product annotations.
+- **No Scroll:** The app uses CSS animations for transitions instead of scrolling.
 
-## Expanding the ESLint configuration
+## How to Build
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Build the project:
+   ```bash
+   npm run build
+   ```
+
+## How to Run & Test
+
+1. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+2. Open your browser and navigate to `http://localhost:5173` (or the port shown in your terminal).
+
+3. Use the navigation buttons to move between looks, or wait for the progress bar to automatically advance.
+
+## Technologies Used
+
+- React
+- Vite
+- CSS for animations
+
+## Customization
+
+- Add new images/videos to the `assets` folder and update `looksData` in `src/components/Lookbook.jsx`.
+- Adjust animation timing in the CSS as needed.
