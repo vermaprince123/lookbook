@@ -193,9 +193,8 @@ h1 {
 
 .lookbook-slider {
   height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
 .slides {
@@ -205,8 +204,7 @@ h1 {
 
 .slide {
   height: 100vh;
-  width: 100%;
-  position: relative;
+  scroll-snap-align: start;
 }
 
 /* Navigation buttons */

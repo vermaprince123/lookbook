@@ -2,10 +2,13 @@ import React from "react";
 import ProductCard from "./ProductCard";
 import "./annotation.css";
 
-function Annotation({ x, y, product }) {
+function Annotation({ x, y, product, onClick }) {
   const handleClick = () => {
-    alert(`Go to product: ${product.name}`);
-    // Or navigate to Product Detail page
+    if (onClick) {
+      onClick(product.id);
+    } else {
+      alert(`Go to product: ${product.name}`);
+    }
   };
 
   return (
